@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-// app.use(helmet.hidePoweredBy());
+app.use(helmet());
 dotenv.config();
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
